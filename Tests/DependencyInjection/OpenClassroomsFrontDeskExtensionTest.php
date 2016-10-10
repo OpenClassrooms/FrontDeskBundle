@@ -2,11 +2,9 @@
 
 namespace OpenClassrooms\Bundle\FrontDeskBundle\Tests\DependencyInjection;
 
-use OpenClassrooms\Bundle\FrontDeskBundle\DependencyInjection\OpenClassroomsFrontDeskExtension;
 use OpenClassrooms\Bundle\FrontDeskBundle\OpenClassroomsFrontDeskBundle;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -25,11 +23,6 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
      * @var ContainerBuilder
      */
     protected $container;
-
-    /**
-     * @var ExtensionInterface
-     */
-    protected $extension;
 
     /**
      * @var XmlFileLoader
@@ -91,9 +84,10 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->container = new ContainerBuilder();
-        $this->extension = new OpenClassroomsFrontDeskExtension();
         $this->container->set('request_stack', new RequestStack());
-        $this->container->registerExtension($this->extension);
+        $bundle = new OpenClassroomsFrontDeskBundle();
+
+        $this->container->registerExtension($bundle->getContainerExtension());
         $this->container->loadFromExtension('openclassrooms_frontdesk');
 
         $this->configLoader = new YamlFileLoader(
@@ -107,8 +101,6 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->serviceLoader->load('services.xml');
-
-        $bundle = new OpenClassroomsFrontDeskBundle();
         $bundle->build($this->container);
     }
 }
