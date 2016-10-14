@@ -24,7 +24,7 @@
         </service>
 
         <service id="openclassrooms.frontdesk.service.pack" class="OpenClassrooms\FrontDesk\Services\Impl\PackServiceImpl">
-            <call method="setGateway">
+            <call method="setPackGateway">
                 <argument type="service" id="openclassrooms.frontdesk.gateways.pack"/>
             </call>
         </service>
