@@ -29,5 +29,8 @@
             </call>
         </service>
 
+        <service id="openclassrooms.frontdesk.models.pack_builder" class="OpenClassrooms\FrontDesk\Models\Impl\PackBuilderImpl"/>
+
+        <service id="openclassrooms.frontdesk.models.person_builder" class="OpenClassrooms\FrontDesk\Models\Impl\PersonBuilderImpl"/>
     </services>
 </container>
