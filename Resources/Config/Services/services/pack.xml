@@ -11,7 +11,5 @@
                 <argument type="service" id="openclassrooms.frontdesk.gateways.pack"/>
             </call>
         </service>
-
-        <service id="openclassrooms.frontdesk.models.pack_builder" class="OpenClassrooms\FrontDesk\Models\Impl\PackBuilderImpl"/>
     </services>
 </container>
