@@ -42,7 +42,7 @@ openclassrooms_frontdesk:
 
 ## Usage
 
-###Post Client 
+###Post Person
 ```php 
 $personService = $container->get('openclassrooms.frontdesk.service.person');
 $personService->create(new PersonStub());
