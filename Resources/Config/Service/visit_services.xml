@@ -1,0 +1,17 @@
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="openclassrooms.frontdesk.gateways.visit" class="OpenClassrooms\FrontDesk\Repository\VisitRepository" public="false">
+            <call method="setApiClient">
+                <argument type="service" id="openclassrooms.frontdesk.client.api_client"/>
+            </call>
+        </service>
+
+        <service id="openclassrooms.frontdesk.service.visit" class="OpenClassrooms\FrontDesk\Services\Impl\VisitServiceImpl">
+            <call method="setVisitGateway">
+                <argument type="service" id="openclassrooms.frontdesk.gateways.visit"/>
+            </call>
+        </service>
+
+        <service id="openclassrooms.frontdesk.models.visit_builder" class="OpenClassrooms\FrontDesk\Models\Impl\VisitBuilderImpl"/>
+    </services>
+</container>
