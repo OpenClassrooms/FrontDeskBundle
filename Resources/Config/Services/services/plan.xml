@@ -11,7 +11,5 @@
                 <argument type="service" id="openclassrooms.frontdesk.gateways.plan"/>
             </call>
         </service>
-
-        <service id="openclassrooms.frontdesk.models.plan_builder" class="OpenClassrooms\FrontDesk\Models\Impl\PlanBuilderImpl"/>
     </services>
 </container>
