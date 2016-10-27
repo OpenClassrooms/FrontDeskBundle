@@ -1,0 +1,16 @@
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <imports>
+        <import resource="Service/pack_services.xml"/>
+        <import resource="Service/person_services.xml"/>
+        <import resource="Service/plan_services.xml"/>
+        <import resource="Service/visit_services.xml"/>
+    </imports>
+
+    <services>
+        <service id="openclassrooms.frontdesk.client.api_client" class="OpenClassrooms\FrontDesk\Client\Impl\ApiClientImpl" public="false">
+            <argument>%openclassrooms.frontdesk.key%</argument>
+            <argument>%openclassrooms.frontdesk.token%</argument>
+        </service>
+    </services>
+</container>
+

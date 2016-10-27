@@ -81,6 +81,29 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\PackServiceImpl', $packService);
     }
 
+    /**
+     * @test
+     */
+    public function PlanServiceReturnPack()
+    {
+        $this->configLoader->load('config.yml');
+        $this->container->compile();
+        $planService = $this->container->get('openclassrooms.frontdesk.service.plan');
+        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\PlanServiceImpl', $planService);
+    }
+
+    /**
+     * @test
+     */
+    public function VisitServiceReturnPack()
+    {
+        $this->configLoader->load('config.yml');
+        $this->container->compile();
+        $visitService = $this->container->get('openclassrooms.frontdesk.service.visit');
+        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\VisitServiceImpl', $visitService);
+    }
+
+
     protected function setUp()
     {
         $this->container = new ContainerBuilder();
@@ -92,12 +115,12 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->configLoader = new YamlFileLoader(
             $this->container,
-            new FileLocator(__DIR__.'/Fixtures/Resources/config')
+            new FileLocator(__DIR__.'/Fixtures/Resources/Config')
         );
 
         $this->serviceLoader = new XmlFileLoader(
             $this->container,
-            new FileLocator(__DIR__.'/../../Resources/config')
+            new FileLocator(__DIR__.'/../../Resources/Config')
         );
 
         $this->serviceLoader->load('services.xml');
