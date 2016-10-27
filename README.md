@@ -53,3 +53,27 @@ $personService->create(new PersonStub());
 $packService = $container->get('openclassrooms.frontdesk.service.pack');
 $packService->create(new PackStub());
 ```
+
+###Delete Pack by id
+```php
+$packService = $container->get('openclassrooms.frontdesk.service.pack');
+$packService->deletePack($packId); 
+```
+
+###Get Visits by person id 
+```php
+$visitService = $container->get('openclassrooms.frontdesk.service.visit');
+$visitService->getVisits($personId, $from, $to);
+```
+
+###Delete Visit by id 
+```php
+$visitService = $container->get('openclassrooms.frontdesk.service.visit');
+$visitService->deleteVisit($visitId);
+```
+
+###Get Plan by Person id 
+```php
+$planService = $container->get('openclassrooms.frontdesk.service.plan');
+$planService->getPlans($personId);
+```
