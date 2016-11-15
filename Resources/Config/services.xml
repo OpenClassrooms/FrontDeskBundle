@@ -6,12 +6,21 @@
         <import resource="Services/services/person.xml"/>
         <import resource="Services/services/plan.xml"/>
         <import resource="Services/services/visit.xml"/>
+        <import resource="Services/gateways/pack.xml"/>
+        <import resource="Services/gateways/person.xml"/>
+        <import resource="Services/gateways/plan.xml"/>
+        <import resource="Services/gateways/visit.xml"/>
     </imports>
 
     <services>
         <service id="openclassrooms.frontdesk.client.api_client" class="OpenClassrooms\FrontDesk\Client\Impl\ApiClientImpl" public="false">
             <argument>%openclassrooms.frontdesk.key%</argument>
             <argument>%openclassrooms.frontdesk.token%</argument>
+        </service>
+        <service id="openclassrooms.front_desk.gateways.base_repository" class="OpenClassrooms\FrontDesk\Repository\BaseRepository" abstract="true" public="false">
+            <call method="setApiClient">
+                <argument type="service" id="openclassrooms.frontdesk.client.api_client"/>
+            </call>
         </service>
     </services>
 </container>
