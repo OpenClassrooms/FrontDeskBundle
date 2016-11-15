@@ -1,11 +1,5 @@
 <container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="openclassrooms.frontdesk.gateways.plan" class="OpenClassrooms\FrontDesk\Repository\PlanRepository" public="false">
-            <call method="setApiClient">
-                <argument type="service" id="openclassrooms.frontdesk.client.api_client"/>
-            </call>
-        </service>
-
         <service id="openclassrooms.frontdesk.service.plan" class="OpenClassrooms\FrontDesk\Services\Impl\PlanServiceImpl">
             <call method="setPlanGateway">
                 <argument type="service" id="openclassrooms.frontdesk.gateways.plan"/>
