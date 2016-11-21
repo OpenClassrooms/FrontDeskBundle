@@ -2,6 +2,8 @@
     <imports>
         <import resource="Services/models/pack.xml"/>
         <import resource="Services/models/person.xml"/>
+        <import resource="Services/models/plan.xml"/>
+        <import resource="Services/models/visit.xml"/>
         <import resource="Services/services/pack.xml"/>
         <import resource="Services/services/person.xml"/>
         <import resource="Services/services/plan.xml"/>
