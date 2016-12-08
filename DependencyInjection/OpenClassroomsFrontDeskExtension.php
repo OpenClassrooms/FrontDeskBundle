@@ -24,6 +24,8 @@ class OpenClassroomsFrontDeskExtension extends Extension
 
         $container->setParameter('openclassrooms.frontdesk.key', $config['key']);
         $container->setParameter('openclassrooms.frontdesk.token', $config['token']);
+        $container->setParameter('openclassrooms.frontdesk.packs', $config['packs']);
+        $container->setParameter('openclassrooms.frontdesk.custom_field_ids', $config['custom_field_ids']);
     }
 
     /**

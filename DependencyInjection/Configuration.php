@@ -20,6 +20,19 @@ class Configuration implements ConfigurationInterface
         $rootNode->children()
             ->scalarNode('key')->isRequired()->end()
             ->scalarNode('token')->isRequired()->end()
+            ->arrayNode('packs')
+                ->useAttributeAsKey('pack')
+                ->prototype('array')
+                    ->children()
+                        ->scalarNode('id')->isRequired()->end()
+                        ->scalarNode('name')->isRequired()->end()
+                    ->end()
+                ->end()
+            ->end()
+            ->arrayNode('custom_field_ids')
+                ->useAttributeAsKey('name')
+                ->prototype('scalar')->end()
+            ->end()
             ->end();
 
         return $treeBuilder;
