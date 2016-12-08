@@ -1,3 +1,14 @@
 openclassrooms_frontdesk:
     key: key
     token: falsetoken
+    packs:
+        example_pack_identifier_1:
+            id: 365423
+            name: 'Example Pack 1'
+        example_pack_identifier_2:
+            id: 98764
+            name: 'Example Pack 2'
+    custom_field_ids:
+        example_name_1: 123454
+        "example name 2": 187435
+        exampleName3: 14536
