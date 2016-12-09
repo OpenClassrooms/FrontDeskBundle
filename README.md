@@ -42,7 +42,7 @@ openclassrooms_frontdesk:
 
 ## Usage
 
-### Pack
+### PACK
 ```php
 $packService = $container->get('openclassrooms.frontdesk.service.pack');
 ```
@@ -55,7 +55,7 @@ $packService->create(new PackStub());
 $packService->deletePack($packId); 
 ```
 
-### Person
+### PERSON
 ```php 
 $personService = $container->get('openclassrooms.frontdesk.service.person');
 ```
@@ -80,14 +80,14 @@ $personService->findAll($page);
 $personService->search($query);
 ```
 
-### Plan
+### PLAN
 ####Get Plan by Person id 
 ```php
 $planService = $container->get('openclassrooms.frontdesk.service.plan');
 $planService->getPlans($personId);
 ```
 
-### Visit
+### VISIT
 #### Get Visits by person id 
 ```php
 $visitService = $container->get('openclassrooms.frontdesk.service.visit');
