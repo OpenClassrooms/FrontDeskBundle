@@ -42,38 +42,59 @@ openclassrooms_frontdesk:
 
 ## Usage
 
-###Post Person
-```php 
-$personService = $container->get('openclassrooms.frontdesk.service.person');
-$personService->create(new PersonStub());
-```
-
-###Post Pack 
+### Pack
 ```php
 $packService = $container->get('openclassrooms.frontdesk.service.pack');
+```
+#### Create Pack 
+```php
 $packService->create(new PackStub());
 ```
-
-###Delete Pack by id
+#### Delete Pack by id
 ```php
-$packService = $container->get('openclassrooms.frontdesk.service.pack');
 $packService->deletePack($packId); 
 ```
 
-###Get Visits by person id 
+### Person
+```php 
+$personService = $container->get('openclassrooms.frontdesk.service.person');
+```
+#### Post Person
+```php 
+$personService->create(new PersonStub());
+```
+#### Put Person
+```php 
+$personService->update(new PersonStub());
+```
+#### Get Person by id
+```php 
+$personService->find($personId);
+```
+#### Get All People
+```php 
+$personService->findAll($page);
+```
+#### Get person by query
+```php 
+$personService->search($query);
+```
+
+### Plan
+####Get Plan by Person id 
+```php
+$planService = $container->get('openclassrooms.frontdesk.service.plan');
+$planService->getPlans($personId);
+```
+
+### Visit
+#### Get Visits by person id 
 ```php
 $visitService = $container->get('openclassrooms.frontdesk.service.visit');
 $visitService->getVisits($personId, $from, $to);
 ```
-
-###Delete Visit by id 
+#### Delete Visit by id 
 ```php
 $visitService = $container->get('openclassrooms.frontdesk.service.visit');
 $visitService->deleteVisit($visitId);
-```
-
-###Get Plan by Person id 
-```php
-$planService = $container->get('openclassrooms.frontdesk.service.plan');
-$planService->getPlans($personId);
 ```
