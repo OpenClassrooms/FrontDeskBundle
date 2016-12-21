@@ -62,6 +62,17 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function EnrollmentServiceReturnEnrollment()
+    {
+        $this->configLoader->load('config.yml');
+        $this->container->compile();
+        $enrollmentService = $this->container->get('openclassrooms.frontdesk.service.enrollment');
+        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\EnrollmentServiceImpl', $enrollmentService);
+    }
+
+    /**
+     * @test
+     */
     public function PersonServiceReturnPerson()
     {
         $this->configLoader->load('config.yml');
