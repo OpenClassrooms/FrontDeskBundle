@@ -41,6 +41,14 @@ openclassrooms_frontdesk:
 ```
 
 ## Usage
+### ENROLLMENT
+```php
+$enrollmentService = $container->get('openclassrooms.frontdesk.service.enrollment');
+```
+#### Query Enrollment
+```php
+$enrollmentService->query($field, $filter, $limit);
+```
 
 ### PACK
 ```php
