@@ -73,6 +73,17 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
+    public function EventOccurrenceStaffServiceReturnEventOccurrenceStaff()
+    {
+        $this->configLoader->load('config.yml');
+        $this->container->compile();
+        $eventOccurrenceStaff = $this->container->get('openclassrooms.frontdesk.service.event_occurrence_staff');
+        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\EventOccurrenceStaff', $eventOccurrenceStaff);
+    }
+
+    /**
+     * @test
+     */
     public function PersonServiceReturnPerson()
     {
         $this->configLoader->load('config.yml');
