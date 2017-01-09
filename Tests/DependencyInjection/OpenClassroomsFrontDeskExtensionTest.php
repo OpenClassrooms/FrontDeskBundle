@@ -3,6 +3,13 @@
 namespace OpenClassrooms\Bundle\FrontDeskBundle\Tests\DependencyInjection;
 
 use OpenClassrooms\Bundle\FrontDeskBundle\OpenClassroomsFrontDeskBundle;
+use OpenClassrooms\FrontDesk\Services\EnrollmentService;
+use OpenClassrooms\FrontDesk\Services\EventOccurrenceStaffService;
+use OpenClassrooms\FrontDesk\Services\PackService;
+use OpenClassrooms\FrontDesk\Services\PersonService;
+use OpenClassrooms\FrontDesk\Services\PlanService;
+use OpenClassrooms\FrontDesk\Services\StaffMemberService;
+use OpenClassrooms\FrontDesk\Services\VisitService;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
@@ -62,58 +69,79 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function EnrollmentServiceReturnEnrollment()
+    public function CallEnrollmentService_ReturnEnrollmentServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
         $enrollmentService = $this->container->get('openclassrooms.frontdesk.service.enrollment');
-        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\EnrollmentServiceImpl', $enrollmentService);
+        $this->assertInstanceOf(EnrollmentService::class, $enrollmentService);
     }
 
     /**
      * @test
      */
-    public function PersonServiceReturnPerson()
+    public function CallEventOccurrenceStaffService_ReturnEventOccurrenceStaffServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
-        $personService = $this->container->get('openclassrooms.frontdesk.service.person');
-        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\PersonServiceImpl', $personService);
+        $eventOccurrenceStaff = $this->container->get('openclassrooms.frontdesk.service.event_occurrence_staff');
+        $this->assertInstanceOf(EventOccurrenceStaffService::class, $eventOccurrenceStaff);
     }
 
     /**
      * @test
      */
-    public function PackServiceReturnPack()
+    public function CallPackService_ReturnPackServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
         $packService = $this->container->get('openclassrooms.frontdesk.service.pack');
-        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\PackServiceImpl', $packService);
+        $this->assertInstanceOf(PackService::class, $packService);
     }
 
     /**
      * @test
      */
-    public function PlanServiceReturnPack()
+    public function CallPersonService_ReturnPersonServiceInstance()
+    {
+        $this->configLoader->load('config.yml');
+        $this->container->compile();
+        $personService = $this->container->get('openclassrooms.frontdesk.service.person');
+        $this->assertInstanceOf(PersonService::class, $personService);
+    }
+
+    /**
+     * @test
+     */
+    public function CallPlanService_ReturnPackServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
         $planService = $this->container->get('openclassrooms.frontdesk.service.plan');
-        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\PlanServiceImpl', $planService);
+        $this->assertInstanceOf(PlanService::class, $planService);
     }
 
     /**
      * @test
      */
-    public function VisitServiceReturnPack()
+    public function CallStaffMemberService_ReturnStaffMemberServiceInstance()
+    {
+        $this->configLoader->load('config.yml');
+        $this->container->compile();
+        $staffMember = $this->container->get('openclassrooms.frontdesk.service.staff_member');
+        $this->assertInstanceOf(StaffMemberService::class, $staffMember);
+    }
+
+    /**
+     * @test
+     */
+    public function CallVisitService_ReturnVisitServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
         $visitService = $this->container->get('openclassrooms.frontdesk.service.visit');
-        $this->assertInstanceOf('OpenClassrooms\FrontDesk\Services\Impl\VisitServiceImpl', $visitService);
+        $this->assertInstanceOf(VisitService::class, $visitService);
     }
-
 
     protected function setUp()
     {

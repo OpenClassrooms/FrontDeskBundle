@@ -5,14 +5,18 @@
         <import resource="Services/models/plan.xml"/>
         <import resource="Services/models/visit.xml"/>
         <import resource="Services/gateways/enrollment.xml"/>
+        <import resource="Services/gateways/event_occurrence_staff.xml"/>
         <import resource="Services/gateways/pack.xml"/>
         <import resource="Services/gateways/person.xml"/>
         <import resource="Services/gateways/plan.xml"/>
+        <import resource="Services/gateways/staff_member.xml"/>
         <import resource="Services/gateways/visit.xml"/>
         <import resource="Services/services/enrollment.xml"/>
+        <import resource="Services/services/event_occurrence_staff.xml"/>
         <import resource="Services/services/pack.xml"/>
         <import resource="Services/services/person.xml"/>
         <import resource="Services/services/plan.xml"/>
+        <import resource="Services/services/staff_member.xml"/>
         <import resource="Services/services/visit.xml"/>
     </imports>
 

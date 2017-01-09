@@ -1,0 +1,9 @@
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="openclassrooms.frontdesk.service.event_occurrence_staff" class="OpenClassrooms\FrontDesk\Services\Impl\EventOccurrenceStaffServiceImpl">
+            <call method="setEventOccurrenceStaffGateway">
+                <argument type="service" id="openclassrooms.frontdesk.gateways.event_occurrence_staff"/>
+            </call>
+        </service>
+    </services>
+</container>
