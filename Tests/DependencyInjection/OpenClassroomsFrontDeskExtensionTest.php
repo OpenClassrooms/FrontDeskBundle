@@ -69,7 +69,7 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function EnrollmentServiceReturnEnrollment()
+    public function CallEnrollmentService_ReturnEnrollmentServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
@@ -80,7 +80,7 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function EventOccurrenceStaffServiceReturnEventOccurrenceStaff()
+    public function CallEventOccurrenceStaffService_ReturnEventOccurrenceStaffServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
@@ -91,7 +91,7 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function PackServiceReturnPack()
+    public function CallPackService_ReturnPackServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
@@ -102,7 +102,7 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function PersonServiceReturnPerson()
+    public function CallPersonService_ReturnPersonServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
@@ -113,7 +113,7 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function PlanServiceReturnPack()
+    public function CallPlanService_ReturnPackServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
@@ -124,7 +124,7 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function StaffMemberServiceReturnStaffMember()
+    public function CallStaffMemberService_ReturnStaffMemberServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
@@ -135,7 +135,7 @@ class OpenClassroomsFrontDeskExtensionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function VisitServiceReturnPack()
+    public function CallVisitService_ReturnVisitServiceInstance()
     {
         $this->configLoader->load('config.yml');
         $this->container->compile();
