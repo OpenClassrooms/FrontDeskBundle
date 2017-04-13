@@ -28,7 +28,7 @@
     "symfony/http-kernel": ">=2.7 <4",
     "symfony/dependency-injection": ">=2.7 <4",
     "symfony/config": ">=2.7 <4",
-    "openclassrooms/front-desk": "1.1.*"
+    "openclassrooms/front-desk": "dev-add_primary_staff_member_in_person"
   },
   "require-dev": {
     "phpunit/phpunit": "~5.0",
